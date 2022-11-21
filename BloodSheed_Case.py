@@ -3,13 +3,11 @@
 # Programación Bajo Plataformas Abiertas
 # Proyecto de Python: Juego Tipo Point and Click
 # Profesor: Julian Gairaud
-# Estudiantes:  Andrés Chaves Vargas (B92198), Emmanuel Nvarro (B65024),
+# Estudiantes: Andrés Chaves Vargas (B92198), Emmanuel Nvarro (B65024),
 # Steven Segura Ulloa (C07442)
 # Nombre del Juego: Bloodsheed Case
 
 import pygame
-import time
-# import sys
 # from pygame.locals import *
 pygame.init()
 # Variables de Ventana Inicial y Menú de Inicio
@@ -65,69 +63,158 @@ if __name__ == '__main__':
     # Textos utilizados en el juego
     # Parte 1
     initial_text = 'Presione ESPACIO para Iniciar'
-    text1 = '''Detective:  Aló!, en que puedo servirle.
-
+    text1 = '''Detective:  Aló!, en que puedo servirle
+    .
     Policia: Buenas noches dectective tenemos un nuevo caso de homicidio
 
     y necesitamos su ayuda para hallar al culpable.
 
     Ensegida le envio la dirección del lugar del suceso!!'''
 
+
     text2 = '''Policia: Buenas noches detective...
 
     El suceso se dio en la habitacion 319, donde la victima llamada Sarah vivia
 
-    , se sabe que era una estudiante de teatro y que le encantaba cocinar,  asi
+    , se sabe que era una estudiante de teatro y que le encantaba cocinar,  así
 
     como la tecnologia y la vida fitness.'''
 
     text3 = '''Policia: Entre los principales sospechosos se encuentra Sam que
 
-    era su mejor amiga y companera de cuarto, tambien se tiene a Shawn que era
+    era su mejor amiga y compañera de cuarto, también se tiene a Shawn que era
 
     otro de sus amigos, este la fue a visitar enterandose que habia fallecido y
 
-    el ultimo sospecho  es Ryan un trabajador de una tienda de telefonos fue
+    el último sospecho  es Ryan un trabajador de una tienda de telefonos que
 
-    visto por lo vecinos entrar al apartemento unas horas antes'''
+    fue visto por lo vecinos entrar al apartemento unas horas antes'''
 
-    text4 = '''Informacion de Sam:
+    text4 = '''Información de Sam: Los policias notaron que se encontraba
 
-    Los policias notaron que se encontraba ansiosa, ademas tenia sangre en su
+    ansiosa, además tenía sangre en su ropa, tenía una uña quebrada y durante
 
-    ropa, tenia una una quebrada y durante su declaracion se fotaba sus manos
+    su declaración se frotaba sus manos constantemente. Ella mencionó que era
 
-    constantemente. Ella menciono que era la companera de cuarto de Sarah pero
+    la compañera de cuarto de Sarah pero no se encontraba en el lugar de los
 
-    no se encontraba en el lugar de los echos cuando y enrealidad se entero por
+    echos y enrealidad se enteró por una llamada, adicionalmente tenia la ropa
 
-    una llamada, adicionalmente tenia la ropa seca.'''
+    seca.'''
 
-    text5 = '''Informacion de Ryan: Los policias indican que Ryan menciona poca
+    text5 = '''Información de Ryan: Los policias indican que Ryan menciona poca
 
-    informacion ya que no pudo observar casi nada durante su paso por el lugar
+    información ya que no pudo observar casi nada durante su paso por el lugar
 
-    debido a que perdio sus lentes, al ser requisado se encontro una factura a
+    debido a que perdió sus lentes, al ser requisado se encontró una factura a
 
-    nombre de la victima, por la compra de un celular y dijo que cuando fue a
+    nombre de la victima, por la compra de un celular. Dijo que cuando fue a
 
     entregarle el celular Sarah se encontraba bien, como dato adicional este se
 
     encontraba totalmente empapado por la fuerte lluvia de hace unas horas.'''
 
-    text6 = '''Informacion de Shawn: Durante su entrevista los policias
+    text6 = '''Información de Shawn: Durante su entrevista los policias
 
-    observaron tenia rasgunos en sus manos, tambien mencionaron que este se
-    
+    observaron tenía rasguños en sus manos, también mencionaron que este se
+
     mostraba muy triste e indignado por la noticia. Shawn comento que venia de
-    
-    estar con su novia y cuando se le pregunto por que estaba seco alego que
-    
-    vino en taxi. Ademas se supo que es un peleador profesional de artes
-    
-    marciales y en su bolsillo se encontro un lapisero con el nombre Sarah'''
-    # Parte 2
 
+    estar con su novia y cuando se le pregunto por que estaba seco alegó que
+
+    vino en taxi. Además se supo que es un peleador profesional de artes
+
+    marciales y en su bolsillo se encontró un lapisero con el nombre Sarah'''
+
+    text_crime1 = '''Investigue la escena del crimen y encuentre todo lo
+
+    necesario para el juicio. Toque la puerta cuando quiera iniciar el juicio
+    '''
+
+    text_crime2 = '''Se va a iniciar por el asesinato de Samantha, por favor
+
+    detective presente los hallazgos de su investigación'''
+
+    text_judgment1 = 'Juez: \n' + 'Presente el motivo del asesinato:'
+
+    text_judgment2 = 'Juez: \n' + '''Sarah estaba a punto de recibir una enorme
+
+    herencia familiar'''
+
+    text_judgment3 = 'Juez: \n' + 'Presente evidencia clave:'
+
+    detective_fail = 'Detective: \n' + '''No encontré el motivo del asesinato.
+
+    Tuve que haber hecho un mejor trabajo.'''
+
+    text_ring = 'Detective: \n' + '''Un anillo de compromiso con la fecha
+
+    05/02/19.'''
+
+    text_weapon = 'Presente el arma homicida'
+
+    weapon_ubication = '''El arma homicida fue encontrada
+
+    en la caja fuerte de un armario. Es un cuchillo.'''
+
+    detective_fail2 = '''No encontré el arma homicida. No se puede saber quien
+
+    es el asesino. Tuve que haber hecho un mejor trabajo.'''
+
+    text_judgment4 = 'Juez: \n' + '''Con la evidencia mostrada, a quien
+
+    determina como el culpable?:'''
+
+    weapon_ubication2 = 'Detective: \n' + '''El arma fue encontrada en una
+
+    caja fuerte con la contraseña 050219 misma que el anillo. Esto significa
+
+    que el asesino conocia la contraseña, luego de algunas interrogaciones, se
+
+    determinó que la otra única persona que conocia esta fecha era:'''
+
+    text_detective1 = 'Detective: \n' + '''Su novio Shawn'''
+
+    text_detective2 = 'Detective: \n' + '''Ryan '''
+
+    text_detective3 = 'Detective: \n' + '''Su mejor amiga Sam '''
+
+    detective_win = 'Juez: \n' + '''Buen trabajo detective, consiguió resolver
+    
+    el caso:'''
+
+    text_safe = '''Se encontro una caja fuerte al fondo del armario, se
+
+    necesita una contraseña de cuatro digitos para abrirla'''
+
+    text_key = 'Es necesaria una llave para abrir el armario'
+
+    text_code = '''Digite la clave de la caja fuerte:'''
+
+    text_weapon2 = '''Se encontró el arma homicida'''
+
+    text_tracks = '''Se necesitan más pistas'''
+
+    text_chair = 'Presione S para mover la silla y alcanzar la lampara'
+
+    text_code2 = '''Una nota que índica que Sarah solicito cambiar la contraseña
+
+    su caja fuerte por algo que no iba a olvidar'''
+
+    text_heredity = '''Sarah recibió una carta de que iba a recibir una gran
+
+    herencia de su familia'''
+
+    text_chair2 = 'Debería utilizar una silla para alcanzar la lampara'
+
+    text_key2 = 'Dentro de la lampara encuentra la llave del armario'
+
+    text_ring2 = '''En la cama se encuentra un anillo con la fecha 05/02/19'''
+
+    text_judgment5 = '''Le gustaría iniciar el juicio? Presione s para
+    
+    continuar'''
+    # Parte 2
 
     class Buttons():
         # Constructor
@@ -147,7 +234,7 @@ if __name__ == '__main__':
 
             # Funcionamiento de los clicks con el mouse_pos
             if self.rect.collidepoint(mouse_pos):
-                if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False:
+                if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False: # noqa
                     self.clicked = True
                     action_mouse = True
 
@@ -156,6 +243,7 @@ if __name__ == '__main__':
             # Dibujar los botones en la pantalla
             surface.blit(self.image, (self.rect.x, self.rect.y))
             return action_mouse
+
         def draw_buttons_one_use(self, surface):
             # Encontrar la posicion del mouse
             mouse_pos = pygame.mouse.get_pos()
@@ -163,7 +251,7 @@ if __name__ == '__main__':
 
             # Funcionamiento de los clicks con el mouse_pos
             if self.rect.collidepoint(mouse_pos):
-                if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False:
+                if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False: # noqa
                     self.clicked = True
                     action_mouse = True
             if pygame.mouse.get_pressed()[0] == 0:
@@ -243,20 +331,21 @@ if __name__ == '__main__':
                     WINDOW.get_width()//1.5686,
                     WINDOW.get_height()//3.2,
                     img_ryan, 0.5)
+
     def texts(text, font, col_text, x, y):  # Muestra los textos en pantalla
         img = font.render(text, True, col_text)
         WINDOW.blit(img, (x, y))
 
     def scenes(scene_img):
         WINDOW.blit(pygame.transform.scale(
-                    scene_img, (WINDOW.get_width()-60, WINDOW.get_height()-60)),
+                    scene_img, (WINDOW.get_width()-60, WINDOW.get_height()-60)), # noqa
                     (0, 0))
 
     def render_multi_line(text, x, y, fsize):
         lines = text.splitlines()
         for i, l in enumerate(lines):
             font = pygame.font.SysFont('timesnewroman', 2*fsize)
-            WINDOW.blit(font.render(l, 0, WHITE), (x, y+1 + fsize*i))
+            WINDOW.blit(font.render(l, 0, WHITE), (x, y + fsize*i))
 
     def sounds(sound):
         pygame.mixer.init()
@@ -289,7 +378,7 @@ if __name__ == '__main__':
                     (0, 0))
         clock.tick(FPS)
 
-        if initial_game == True:
+        if initial_game == True: # noqa
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     run = False
@@ -321,10 +410,10 @@ if __name__ == '__main__':
                 # Lo que sucede al presionar cada boton
                 if button_initial.draw_buttons(WINDOW):
                     game_state = 'Escena_1.1'
-                    #sounds('Phone.mp3')
+                    # sounds('Phone.mp3')
                 if button_out.draw_buttons(WINDOW):
                     run = False
-            if game_pause == False:
+            if game_pause == False: # noqa
                 # Parte 1: Introduccion
                 if game_state == 'Escena_1.1':
                     scenes(scene_1)
@@ -375,7 +464,7 @@ if __name__ == '__main__':
                         if event.type == pygame.KEYDOWN:
                             if event.key == pygame.K_SPACE:
                                 game_state = 'Escena_1.4'
-                                #sounds('SonidoAmbiente.mp3')
+                                # sounds('SonidoAmbiente.mp3')
                             if event.key == pygame.K_p:
                                 game_pause = True
 
@@ -415,14 +504,10 @@ if __name__ == '__main__':
 
                 # Parte 2: Seleccion de Elementos
 
-            if button_state == False:
+            if button_state == False: # noqa
                 if game_state == 'Escena_2.1':
                     scenes(crime_Scene)
-                    render_multi_line('''Investigue la escena del crimen y encuentre
-
-                    todo lo necesario para el juicio. Toque la puerta cuando quiera
-
-                    iniciar el juicio''', 10, 10, 15)
+                    render_multi_line(text_crime1, 10, 10, 15)
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
                             run = False
@@ -441,11 +526,7 @@ if __name__ == '__main__':
 
                 if game_state == 'Escena_3.1':
                     scenes(trial_Scene)
-                    render_multi_line('''Se va a iniciar por el asesinato de Samantha
-
-                                , por favor detective presente los hallazgos de
-
-                                su investigación''', 10, 10, 15)
+                    render_multi_line(text_crime2, 10, 10, 15)
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
                             run
@@ -457,14 +538,10 @@ if __name__ == '__main__':
 
                 if game_state == 'Escena_3.2':
                     scenes(trial_Scene)
-                    render_multi_line('Juez: \n' +
-                            'Presente el motivo del asesinato:', 10, 10, 15)
+                    render_multi_line(text_judgment1, 10, 10, 15)
                     if 'segunda pista' in articles:
                         scenes(trial_Scene)
-                        render_multi_line('Juez: \n' +
-                                '''Sara estaba a punto de recibir una
-                                
-                                enorme herencia familiar''', 10, 10, 15)
+                        render_multi_line(text_judgment2, 10, 10, 15)
                         for event in pygame.event.get():
                             if event.type == pygame.QUIT:
                                 run
@@ -475,10 +552,7 @@ if __name__ == '__main__':
                                     game_pause = True
                     else:
                         scenes(trial_Scene)
-                        render_multi_line('Detective: \n' + '''No encontre el motivo del asesinato.
-                                
-                                Tuve que haber hecho un mejor trabajo.'''
-                                , 10, 10, 15)
+                        render_multi_line(detective_fail, 10, 10, 15)
                         for event in pygame.event.get():
                             if event.type == pygame.QUIT:
                                 run
@@ -488,14 +562,10 @@ if __name__ == '__main__':
 
                 if game_state == 'Escena_3.3':
                     scenes(trial_Scene)
-                    render_multi_line('Juez: \n' +
-                            'Presente evidencia clave:', 10, 10, 15)
+                    render_multi_line(text_judgment3, 10, 10, 15)
                     if 'tercera pista' in articles:
                         scenes(trial_Scene)
-                        render_multi_line('Detective: \n' +
-                                '''Un anillo de compromiso con la fecha
-                                
-                                05/02/19.''', 10, 10, 15)
+                        render_multi_line(text_ring, 10, 10, 15)
                         for event in pygame.event.get():
                             if event.type == pygame.QUIT:
                                 run
@@ -506,10 +576,7 @@ if __name__ == '__main__':
                                     game_pause = True
                     else:
                         scenes(trial_Scene)
-                        render_multi_line('Detective: \n' + '''No encontre evidencia clave.
-                                
-                                Tuve que haber hecho un mejor trabajo.'''
-                                , 10, 10, 15)
+                        render_multi_line(detective_fail, 10, 10, 15)
                         for event in pygame.event.get():
                             if event.type == pygame.QUIT:
                                 run
@@ -519,13 +586,10 @@ if __name__ == '__main__':
 
                 if game_state == 'Escena_3.4':
                     scenes(trial_Scene)
-                    render_multi_line('''Presente el arma homicida''', 10, 10, 15)
+                    render_multi_line(text_weapon, 10, 10, 15)
                     if 'arma homicida' in articles:
                         scenes(trial_Scene)
-                        render_multi_line('''El arma homicida fue encontrada
-                                
-                                en la caja fuerte de un armario. Es un cuchillo.'''
-                                , 10, 10, 15)
+                        render_multi_line(weapon_ubication, 10, 10, 15)
                         for event in pygame.event.get():
                             if event.type == pygame.QUIT:
                                 run
@@ -536,12 +600,7 @@ if __name__ == '__main__':
                                     game_pause = True
                     else:
                         scenes(trial_Scene)
-                        render_multi_line('''No encontre el arma homicida.
-                                
-                                No se puede saber quien es el asesino.
-                                
-                                Tuve que haber hecho un mejor trabajo.'''
-                                , 10, 10, 15)
+                        render_multi_line(detective_fail2, 10, 10, 15)
                         for event in pygame.event.get():
                             if event.type == pygame.QUIT:
                                 run
@@ -551,45 +610,26 @@ if __name__ == '__main__':
 
                 if game_state == 'Escena_3.5':
                     scenes(trial_Scene)
-                    render_multi_line('Juez: \n' +
-                            '''Con la evidencia mostrada, a quien determina como
-                            
-                            el culpable?:''', 10, 10, 15)
+                    render_multi_line(text_judgment4, 10, 10, 15)
                     if 'primera pista' in articles:
                         scenes(trial_Scene)
-                        render_multi_line('Detective: \n' +  '''El arma fue
-
-                            encontrada en una caja fuerte con la contraseña
-
-                            050219 misma que el anillo. Esto significa que el
-
-                            asesino conocia la contraseña, luego de algunas
-
-                            interrogaciones, se determino que la otra unica
-
-                            persona que conocia esta fecha era:'''
-                             , 10, 10, 15)
+                        render_multi_line(weapon_ubication2, 10, 10, 15)
                         if button_shawn.draw_buttons(WINDOW):
-                            #shawn
+                            # shawn
                             game_state = 'button_Shawn'
 
                         if button_ryan.draw_buttons(WINDOW):
-                            #ryan
+                            # ryan
                             game_state = 'button_Ryan'
                         if button_sam.draw_buttons(WINDOW):
-                            #sam
+                            # sam
                             game_state = 'button_Sam'
                     else:
                         scenes(trial_Scene)
-                        render_multi_line('Detective: \n' + '''No encontre suficiente
-                                    
-                    evidencia para encontrar un culpable.
-                                
-                    Tuve que haber hecho un mejor trabajo.'''
-                                , 10, 10, 15)
+                        render_multi_line(detective_fail, 10, 10, 15)
                 if game_state == 'button_Shawn':
                     scenes(trial_Scene)
-                    render_multi_line('Detective: \n' + '''Su novio Shawn''', 10, 10, 15)
+                    render_multi_line(text_detective1, 10, 10, 15)
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
                             run = False
@@ -600,7 +640,7 @@ if __name__ == '__main__':
                                 game_pause = True
                 if game_state == 'button_Ryan':
                     scenes(trial_Scene)
-                    render_multi_line('Detective: \n' + '''Ryan ''', 10, 10, 15)
+                    render_multi_line(text_detective2, 10, 10, 15)
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
                             run = False
@@ -611,7 +651,7 @@ if __name__ == '__main__':
                                 game_pause = True
                 if game_state == 'button_Sam':
                     scenes(trial_Scene)
-                    render_multi_line('Detective: \n' + '''Su mejor amiga Sam ''', 10, 10, 15)
+                    render_multi_line(text_detective3, 10, 10, 15)
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
                             run = False
@@ -622,8 +662,7 @@ if __name__ == '__main__':
                                 game_pause = True
                 if game_state == 'Escena_3.6':
                     scenes(trial_Scene)
-                    render_multi_line('Juez: \n' +
-                            '''Buen trabajo detective, consiguio resolver el caso:''', 10, 10, 15)
+                    render_multi_line(detective_win, 10, 10, 15)
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
                             run = False
@@ -651,11 +690,11 @@ if __name__ == '__main__':
                                 button_Winner = False
                                 game_state = 'main'
                                 articles.clear()
-            if button_gameover == True:
+            if button_gameover == True: # noqa
                 scenes(game_Over)
-            if button_Winner == True:
+            if button_Winner == True: # noqa
                 scenes(winner_Scene)
-            if button_state == True:
+            if button_state == True: # noqa
                 scenes(crime_Scene)
 
                 if button_bed.draw_buttons(WINDOW):
@@ -673,25 +712,22 @@ if __name__ == '__main__':
                 if button_door.draw_buttons(WINDOW):
                     button_Door = True
 
-            if button_Wardrobe == True:
+            if button_Wardrobe == True: # noqa
                 scenes(crime_Scene)
                 # render_multi_line(text_Wardrobe, 10, 10, 15)
                 if 'llave armario' in articles:
 
-                    render_multi_line('Se abrio el armario', 10, 10, 15)
+                    render_multi_line('Se abrió el armario', 10, 10, 15)
                     if event.type == pygame.KEYDOWN:
                         if event.key == pygame.K_p:
                             game_pause = True
                         else:
                             scenes(crime_Scene)
-                            render_multi_line('''Se encontro una caja fuerte al fondo del armario, se necesita una
-                            
-                            contraseña de cuatro digitos para abrirla''', 10, 10, 15)
+                            render_multi_line(text_safe, 10, 10, 15)
                             articles.append('caja fuerte')
                             button_Lockbox_Code = True
                 else:
-                    render_multi_line('Es necesaria una llave para abrir el armario', 10, 10, 15)
-
+                    render_multi_line(text_key, 10, 10, 15)
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
                             run = False
@@ -701,15 +737,15 @@ if __name__ == '__main__':
                             else:
                                 button_Wardrobe = False
 
-            if button_Lockbox_Code == True:
+            if button_Lockbox_Code == True: # noqa
                 if 'caja fuerte' in articles:
                     scenes(crime_Scene)
-                    render_multi_line('''Digite la clave de la caja fuerte:''', 10, 10, 15)
+                    render_multi_line(text_code, 10, 10, 15)
                     if 'primera pista' in articles:
                         if 'segunda pista' in articles:
                             if 'tercera pista' in articles:
                                 scenes(crime_Scene)
-                                render_multi_line('''Se encontro el arma homicida''', 10, 10, 15)
+                                render_multi_line(text_weapon2, 10, 10, 15)
                                 articles.append('arma homicida')
                                 for event in pygame.event.get():
                                     if event.type == pygame.QUIT:
@@ -722,7 +758,7 @@ if __name__ == '__main__':
                                             button_Wardrobe = False
                             else:
                                 scenes(crime_Scene)
-                                render_multi_line('''Se necesitan mas pistas''', 10, 10, 15)
+                                render_multi_line(text_tracks, 10, 10, 15)
                                 for event in pygame.event.get():
                                     if event.type == pygame.QUIT:
                                         run = False
@@ -734,7 +770,7 @@ if __name__ == '__main__':
                                             button_Wardrobe = False
                         else:
                             scenes(crime_Scene)
-                            render_multi_line('''Se necesitan mas pistas''', 10, 10, 15)
+                            render_multi_line(text_tracks, 10, 10, 15)
                             for event in pygame.event.get():
                                 if event.type == pygame.QUIT:
                                     run = False
@@ -746,7 +782,7 @@ if __name__ == '__main__':
                                         button_Wardrobe = False
                     else:
                         scenes(crime_Scene)
-                        render_multi_line('''Se necesitan mas pistas''', 10, 10, 15)
+                        render_multi_line(text_tracks, 10, 10, 15)
                         for event in pygame.event.get():
                             if event.type == pygame.QUIT:
                                 run = False
@@ -758,10 +794,10 @@ if __name__ == '__main__':
                                     button_Wardrobe = False
 
             # Pistas variables
-            if button_Chair == True:
+            if button_Chair == True: # noqa
                 scenes(crime_Scene)
                 if 'chair enable' in articles:
-                    render_multi_line('Presione S para mover la silla y alcanzar la lampara', 10, 10, 15)
+                    render_multi_line(text_chair, 10, 10, 15)
                     articles.append('moved chair')
                     for event in pygame.event.get():
                         if event.type == pygame.QUIT:
@@ -783,13 +819,9 @@ if __name__ == '__main__':
                                 game_pause = True
                             else:
                                 button_Chair = False
-            if button_Shelf == True:
+            if button_Shelf == True: # noqa
                 scenes(crime_Scene)
-                render_multi_line('''Una nota que indica que Sara solicito
-                                
-                cambiar la contraseña su caja fuerte por algo que
-                                
-                                no iba a olvidar''', 10, 10, 15)
+                render_multi_line(text_code2, 10, 10, 15)
                 articles.append('segunda pista')
 
             for event in pygame.event.get():
@@ -801,11 +833,9 @@ if __name__ == '__main__':
                             button_Shelf = False
                     if event.key == pygame.K_p:
                         game_pause = True
-            if button_Desk == True:
+            if button_Desk == True: # noqa
                 scenes(crime_Scene)
-                render_multi_line('''Sara recibio una carta de que iba a recibir
-                            
-                            una gran herencia de su familia''', 10, 10, 15)
+                render_multi_line(text_heredity, 10, 10, 15)
                 articles.append('primera pista')
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
@@ -816,13 +846,13 @@ if __name__ == '__main__':
                         if event.key == pygame.K_p:
                             game_pause = True
 
-            if button_Lamp == True:
+            if button_Lamp == True: # noqa
                 scenes(crime_Scene)
-                render_multi_line('Deberia utilizar una silla para alcanzar la lampara', 10, 10, 15)
+                render_multi_line(text_chair2, 10, 10, 15)
                 articles.append('chair enable')
                 if 'moved chair' in articles:
                     scenes(crime_Scene)
-                    render_multi_line('Dentro de la lampara encuentra la llave del armario', 10, 10, 15)
+                    render_multi_line(text_key2, 10, 10, 15)
                     articles.append('llave armario')
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
@@ -833,12 +863,9 @@ if __name__ == '__main__':
 
                         if event.key == pygame.K_p:
                             game_pause = True
-            if button_Bed == True:
+            if button_Bed == True: # noqa
                 scenes(crime_Scene)
-                render_multi_line('''En la cama se encuentra un anillo
-                                    
-                con la fecha 05/02/19'''
-                                , 10, 10, 15)
+                render_multi_line(text_ring2, 10, 10, 15)
                 articles.append('tercera pista')
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
@@ -848,11 +875,9 @@ if __name__ == '__main__':
                             button_Bed = False
                         if event.key == pygame.K_p:
                             game_pause = True
-            if button_Door == True:
+            if button_Door == True: # noqa
                 scenes(crime_Scene)
-                render_multi_line('''Le gustaria iniciar el juicio? Presione s para
-                                    
-                                    continuar''', 10, 10, 15)
+                render_multi_line(text_judgment5, 10, 10, 15)
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
                         run = False
@@ -865,7 +890,7 @@ if __name__ == '__main__':
                             articles.append('salida')
                         else:
                             button_Door = False
-            elif game_pause == True:
+            elif game_pause == True: # noqa
                 WINDOW.blit(pygame.transform.scale(
                             inicial_Background2,
                             (WINDOW.get_width(), WINDOW.get_height())),
@@ -875,7 +900,7 @@ if __name__ == '__main__':
                 if button_back.draw_buttons(WINDOW):
                     game_state = 'main'
 
-                if game_articles == True:
+                if game_articles == True: # noqa
                     WINDOW.blit(pygame.transform.scale(
                                 inicial_Background2,
                                 (WINDOW.get_width(), WINDOW.get_height())),
