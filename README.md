@@ -5,3 +5,7 @@ El proyecto consiste en un juego creado en pygames, con interfaz gráfica. Para 
 debe estar en una carpeta con todos los demás archivos multimedia presentes en la carpeta Multimedia.
 
 **NOTA:** Pygames noe esta optimizado para este tipo de juegos y dependiendo de la versión de python y la capacidad de procesamiento de la VM o computadora que se este usando el juego puede moverse lento o quedarse pegado. Los comandos se deben ejecutar despacio por esto mismo.
+
+**CONTROLES**
+Para investigar el cuarto utilice el mouse, muevalo hacia los distintos objetos y use click izquierdo para interactuar con este.
+Use la barra espaciadora para avanzar con los dialogos
